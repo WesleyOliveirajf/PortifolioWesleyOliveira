@@ -107,7 +107,7 @@
     );
   }
 
-  window.MonoTweakablePortfolio = function MonoTweakablePortfolio({ tweaks }) {
+  window.MonoTweakablePortfolio = function MonoTweakablePortfolio({ tweaks, onLangChange }) {
     const t = tones(tweaks);
     const dense = tweaks.density === "compact";
     const pad = dense ? "0 40px" : "0 56px";
@@ -119,6 +119,7 @@
     const lang = (tweaks.lang === "en") ? "en" : "pt";
     const L = P[lang];
     const U = L.ui;
+    const cvHref = lang === "en" ? (P.links.cvEn || P.links.cvPt || "#") : (P.links.cvPt || "#");
 
     // Atualiza atributo lang do <html>
     React.useEffect(() => {
@@ -148,7 +149,44 @@
           background: t.bg, transition: "background .35s ease",
         }}>
           <div style={{ color: t.ink }}>
-            <span style={{ color: t.accent }}>$</span> ./wesley_oliveira <span style={{ color: t.soft }}>--portfolio --year=2026 --lang={lang}</span>
+            <span style={{ color: t.accent }}>$</span> ./wesley_oliveira <span style={{ color: t.soft }}>--portfolio --year=2026 --lang=</span>
+            <button
+              type="button"
+              onClick={() => onLangChange && onLangChange("pt")}
+              style={{
+                border: `1px solid ${lang === "pt" ? t.accent : t.rule}`,
+                background: lang === "pt" ? t.accent : "transparent",
+                color: lang === "pt" ? "#0a0a0a" : t.soft,
+                fontFamily: "inherit",
+                fontSize: "inherit",
+                letterSpacing: "inherit",
+                cursor: "pointer",
+                padding: "2px 8px",
+                borderRadius: 999,
+                lineHeight: 1.3,
+              }}
+            >
+              PT
+            </button>
+            <span style={{ color: t.soft }}> / </span>
+            <button
+              type="button"
+              onClick={() => onLangChange && onLangChange("en")}
+              style={{
+                border: `1px solid ${lang === "en" ? t.accent : t.rule}`,
+                background: lang === "en" ? t.accent : "transparent",
+                color: lang === "en" ? "#0a0a0a" : t.soft,
+                fontFamily: "inherit",
+                fontSize: "inherit",
+                letterSpacing: "inherit",
+                cursor: "pointer",
+                padding: "2px 8px",
+                borderRadius: 999,
+                lineHeight: 1.3,
+              }}
+            >
+              EN
+            </button>
           </div>
           <div style={{ display: "flex", gap: 28, color: t.soft }}>
             <a href="#about" style={{ color: "inherit" }}>{U.navAbout}</a>
@@ -156,6 +194,7 @@
             <a href="#cv" style={{ color: "inherit" }}>{U.navCv}</a>
             <a href="#differentials" style={{ color: "inherit" }}>{U.navWhyMe}</a>
             <a href="#stack" style={{ color: "inherit" }}>{U.navStack}</a>
+            <a href="#github" style={{ color: "inherit" }}>{U.navGithub}</a>
             <a href="#contact" style={{ color: "inherit" }}>{U.navContact}</a>
           </div>
           <div style={{ color: t.accent }}>{U.openToWork}</div>
@@ -409,9 +448,82 @@
             </pre>
           </section>
 
+          {/* GITHUB */}
+          <section id="github" style={{ padding: sectionPadding }}>
+            <SH t={t} idx={6} label={U.sectionGithub} meta={U.sectionGithubMeta}/>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              {(L.githubProjects || []).map((p) => {
+                const a = `oklch(72% 0.06 ${p.hue})`;
+                const b = `oklch(20% 0.04 ${p.hue})`;
+                return (
+                  <a
+                    key={p.id}
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-card"
+                    style={{
+                      display: "block",
+                      background: t.panel,
+                      border: `1px solid ${t.rule}`,
+                      textDecoration: "none",
+                      color: t.ink,
+                      transition: "border-color .25s, transform .25s",
+                      "--accent": t.accent,
+                    }}
+                  >
+                    <div style={{
+                      height: 6,
+                      background: `linear-gradient(90deg, ${a} 0%, ${b} 100%)`,
+                    }}/>
+                    <div style={{ padding: dense ? "16px 18px 18px" : "20px 22px 22px" }}>
+                      <div style={{
+                        display: "flex", justifyContent: "space-between",
+                        alignItems: "center", marginBottom: 10,
+                      }}>
+                        <span style={{
+                          fontSize: 10, letterSpacing: ".08em",
+                          color: t.soft, border: `1px solid ${t.rule}`,
+                          padding: "2px 7px",
+                        }}>
+                          github
+                        </span>
+                        <span style={{ color: t.accent, fontSize: 14 }}>↗</span>
+                      </div>
+                      <h3 style={{
+                        fontSize: 16, fontWeight: 500, letterSpacing: "-.01em",
+                        margin: "0 0 8px", color: t.ink,
+                      }}>{p.title}</h3>
+                      <p style={{
+                        margin: 0, fontSize: 12, lineHeight: 1.6, color: t.muted,
+                      }}>{p.summary}</p>
+                      <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 5 }}>
+                        {p.stack.map(s => (
+                          <span key={s} style={{
+                            fontSize: 10, letterSpacing: ".06em",
+                            padding: "2px 7px", color: t.soft,
+                            border: `1px solid ${t.rule}`,
+                            background: tweaks.dark ? "#0c0c0c" : "#fff",
+                          }}>{s}</span>
+                        ))}
+                      </div>
+                      <div style={{
+                        marginTop: 14, paddingTop: 12,
+                        borderTop: `1px dashed ${t.rule}`,
+                        fontSize: 11, color: t.accent,
+                      }}>
+                        {U.viewOnGithub}
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+
           {/* CONTACT */}
           <section id="contact" style={{ padding: dense ? "48px 0 64px" : "72px 0 96px" }}>
-            <SH t={t} idx={6} label={U.sectionContact} meta={U.sectionContactMeta}/>
+            <SH t={t} idx={7} label={U.sectionContact} meta={U.sectionContactMeta}/>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
               <div>
                 <div style={{
@@ -428,7 +540,7 @@
                   {U.tagline}
                 </p>
                 <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
-                  <a className="mt-btn primary" href="#" download style={{
+                  <a className="mt-btn primary" href={cvHref} download style={{
                     background: t.accent, color: "#0a0a0a",
                     border: "none", padding: "14px 22px",
                     fontFamily: "inherit", fontSize: 12, letterSpacing: ".06em",
@@ -454,21 +566,45 @@
                 padding: 24, transition: "background .35s",
               }}>
                 <div style={{ color: t.soft, fontSize: 11, marginBottom: 14 }}>{U.links}</div>
-                {[
+                {([
                   ["linkedin", P.links.linkedin, P.links.linkedinUrl],
                   ["github", P.links.github, P.links.githubUrl],
                   ["email", P.links.email, `mailto:${P.links.email}`],
-                ].map(([k, v, u]) => (
-                  <a key={k} href={u} target="_blank" rel="noopener" className="mt-link" style={{
-                    display: "flex", justifyContent: "space-between",
-                    padding: "10px 0", borderBottom: `1px dashed ${t.rule}`,
-                    color: t.ink, textDecoration: "none", fontSize: 13,
-                    "--accent": t.accent,
-                  }}>
-                    <span style={{ color: t.soft }}>{k}</span>
-                    <span>{v}</span>
-                  </a>
-                ))}
+                ]).map(([k, v, rawHref]) => {
+                  const isMail = k === "email";
+                  const href = (() => {
+                    if (rawHref && rawHref !== "#") return rawHref;
+                    if (isMail) return `mailto:${P.links.email}`;
+                    const s = String(v || "").trim();
+                    if (/^https?:\/\//i.test(s)) return s;
+                    return s ? `https://${s}` : "#";
+                  })();
+                  const outbound = !isMail && /^https?:\/\//i.test(href);
+                  return (
+                    <div key={k} style={{
+                      display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16,
+                      padding: "10px 0", borderBottom: `1px dashed ${t.rule}`,
+                      fontSize: 13,
+                    }}>
+                      <span style={{ color: t.soft }}>{k}</span>
+                      <a
+                        href={href}
+                        {...(outbound ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="mt-link mt-link-value"
+                        style={{
+                          color: t.ink,
+                          textDecoration: "none",
+                          textAlign: "right",
+                          cursor: "pointer",
+                          wordBreak: "break-all",
+                          "--accent": t.accent,
+                        }}
+                      >
+                        {v}
+                      </a>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>

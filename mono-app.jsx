@@ -10,9 +10,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 function initialTweakState() {
   let lang = TWEAK_DEFAULTS.lang;
+  let hasLangFromQuery = false;
+  try {
+    const q = new URLSearchParams(window.location.search).get("lang");
+    if (q === "en" || q === "pt") {
+      lang = q;
+      hasLangFromQuery = true;
+    }
+  } catch (e) {}
   try {
     const s = localStorage.getItem("portfolio-lang");
-    if (s === "en" || s === "pt") lang = s;
+    if (!hasLangFromQuery && (s === "en" || s === "pt")) lang = s;
   } catch (e) {}
   return { ...TWEAK_DEFAULTS, lang };
 }
@@ -31,11 +39,19 @@ function App() {
     try {
       localStorage.setItem("portfolio-lang", t.lang);
     } catch (e) {}
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", t.lang === "en" ? "en" : "pt");
+      window.history.replaceState({}, "", url);
+    } catch (e) {}
   }, [t.lang]);
 
   return (
     <>
-      <window.MonoTweakablePortfolio tweaks={t} />
+      <window.MonoTweakablePortfolio
+        tweaks={t}
+        onLangChange={(v) => setTweak("lang", v === "en" ? "en" : "pt")}
+      />
 
       <TweaksPanel title="Tweaks">
         <TweakSection label="Idioma · Language" />

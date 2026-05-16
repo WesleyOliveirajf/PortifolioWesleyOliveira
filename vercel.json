@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Portfolio%20Wesley%20-%20Mono.html" }
+  ]
+}

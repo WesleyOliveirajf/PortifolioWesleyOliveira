@@ -3,7 +3,7 @@ window.PORTFOLIO = {
   // Compartilhado (não traduz)
   name: "Wesley Oliveira",
   initials: "WO",
-  yearsExp: "15+",
+  yearsExp: "10+",
   links: {
     github: "github.com/WesleyOliveirajf",
     githubUrl: "https://github.com/WesleyOliveirajf",
@@ -11,6 +11,8 @@ window.PORTFOLIO = {
     linkedinUrl: "https://www.linkedin.com/in/wesleyoliveirajf/",
     email: "wesleyinfo22@gmail.com",
     phone: "(32) 99989-5469",
+    cvPt: "uploads/curriculo_wesley.pdf",
+    cvEn: "uploads/resume_wesley_en.pdf",
   },
 
   // ────────────── PT ──────────────
@@ -20,10 +22,10 @@ window.PORTFOLIO = {
     location: "Juiz de Fora, MG",
     available: "Disponível para oportunidades remotas, híbridas ou presenciais em Juiz de Fora/MG",
 
-    intro: "Analista de Sistemas e Desenvolvedor Fullstack com mais de 15 anos em TI. Foco em automatizar processos com Python, integrar sistemas legados com tecnologias modernas e aplicar IA Generativa em produção.",
+    intro: "Analista de Sistemas e Desenvolvedor Fullstack com mais de 10 anos em TI. Foco em automatizar processos com Python, integrar sistemas legados com tecnologias modernas e aplicar IA Generativa em produção.",
 
     longBio: [
-      "Sou Analista de Sistemas com mais de 15 anos de experiência em TI, hoje atuando como Pleno na TORP Indústria Têxtil — onde evoluo o ERP SISPLAN, garanto a estabilidade da operação financeira e elimino trabalho manual da equipe com automações em Python.",
+      "Sou Analista de Sistemas com mais de 10 anos de experiência em TI, hoje atuando como Pleno na TORP Indústria Têxtil — onde evoluo o ERP SISPLAN, garanto a estabilidade da operação financeira e elimino trabalho manual da equipe com automações em Python.",
       "Tenho experiência sólida com bancos de dados SQL e PostgreSQL, criação de pipelines de dados e implementação de soluções com Inteligência Artificial Generativa via n8n e GPT-4o. Não é só teoria: meus agentes e automações estão em produção e entregam impacto mensurável.",
       "Tenho um perfil bridge: entendo tanto o lado técnico quanto as necessidades do negócio, facilitando a comunicação entre TI e áreas operacionais. Aprendo continuamente — atualmente faço especialização em IA para Desenvolvimento e estudo semanalmente Python, segurança e cloud.",
     ],
@@ -182,6 +184,33 @@ window.PORTFOLIO = {
       "Aprendizado contínuo: pós-graduação ativa + estudos semanais em Python, segurança e cloud.",
     ],
 
+    githubProjects: [
+      {
+        id: "gestao-estoque",
+        title: "Gestão de Estoque · EPI",
+        summary: "Sistema de gestão de EPIs desenvolvido em Python para uso empresarial real. Controle de inventário com alertas de validade, relatórios gerenciais e interface gráfica.",
+        stack: ["Python", "SQLite", "Pandas", "Tkinter"],
+        url: "https://github.com/WesleyOliveirajf/Gestao_de_estoque",
+        hue: 140,
+      },
+      {
+        id: "agnus-ia",
+        title: "Agnus · Agente de IA",
+        summary: "Agente de IA construído em Python com integração a LLMs para respostas contextualizadas e automação inteligente de fluxos.",
+        stack: ["Python", "LLMs", "APIs"],
+        url: "https://github.com/WesleyOliveirajf/Agnus_IA",
+        hue: 280,
+      },
+      {
+        id: "uaibimotors",
+        title: "UaiBiMotors · Sistema Java",
+        summary: "Sistema de gestão de concessionária de motos desenvolvido em Java com POO. Cadastro de veículos, clientes e pedidos.",
+        stack: ["Java", "POO", "IntelliJ"],
+        url: "https://github.com/WesleyOliveirajf/Projeto_UaiBiMotors_JAVA",
+        hue: 38,
+      },
+    ],
+
     // Strings de UI
     ui: {
       tagline: "Disponível para vagas CLT em modelo remoto ou híbrido. Respondo em até 24h.",
@@ -203,14 +232,18 @@ window.PORTFOLIO = {
       sectionDiffMeta: "// por que eu",
       sectionStack: "stack.json",
       sectionStackMeta: (n) => `// ${n} itens`,
+      sectionGithub: "github[]",
+      sectionGithubMeta: "// projetos open source",
+      viewOnGithub: "ver no github →",
       sectionContact: "contato()",
       sectionContactMeta: "// fala comigo",
       navAbout: "sobre",
       navWork: "trabalhos",
       navCv: "cv",
-      navWhyMe: "por_que",
+      navWhyMe: "diferenciais",
       navStack: "stack",
       navContact: "contato",
+      navGithub: "github",
       openToWork: "● disponível",
       bioContact: "contato direto",
       education: "// formação",
@@ -304,10 +337,10 @@ window.PORTFOLIO = {
     location: "Juiz de Fora, MG, Brazil",
     available: "Open to remote, hybrid, and on-site roles in Juiz de Fora/MG",
 
-    intro: "Systems Analyst and Fullstack Developer with 15+ years in IT. Focused on automating processes with Python, integrating legacy systems with modern tech, and shipping Generative AI to production.",
+    intro: "Systems Analyst and Fullstack Developer with 10+ years in IT. Focused on automating processes with Python, integrating legacy systems with modern tech, and shipping Generative AI to production.",
 
     longBio: [
-      "I'm a Systems Analyst with 15+ years of IT experience, currently working as a mid-level engineer at TORP Indústria Têxtil — where I evolve the SISPLAN ERP, keep the financial operation stable, and remove manual work from the team with Python automations.",
+      "I'm a Systems Analyst with 10+ years of IT experience, currently working as a mid-level engineer at TORP Indústria Têxtil — where I evolve the SISPLAN ERP, keep the financial operation stable, and remove manual work from the team with Python automations.",
       "Solid background in SQL/PostgreSQL databases, data pipelines, and Generative AI solutions via n8n and GPT-4o. Not just theory: my agents and automations run in production and deliver measurable impact.",
       "I have a bridge profile: I understand both the technical side and business needs, easing communication between IT and operational teams. I'm a continuous learner — currently in a specialization in AI for Development and studying Python, security, and cloud weekly.",
     ],
@@ -466,6 +499,33 @@ window.PORTFOLIO = {
       "Continuous learning: active postgrad + weekly studies in Python, security, and cloud.",
     ],
 
+    githubProjects: [
+      {
+        id: "gestao-estoque",
+        title: "Inventory Management · EPI",
+        summary: "PPE inventory management system built in Python for real business use. Stock control with expiry alerts, management reports, and a GUI.",
+        stack: ["Python", "SQLite", "Pandas", "Tkinter"],
+        url: "https://github.com/WesleyOliveirajf/Gestao_de_estoque",
+        hue: 140,
+      },
+      {
+        id: "agnus-ia",
+        title: "Agnus · AI Agent",
+        summary: "AI agent built in Python. Integrates with LLMs for contextual responses and intelligent workflow automation.",
+        stack: ["Python", "LLMs", "APIs"],
+        url: "https://github.com/WesleyOliveirajf/Agnus_IA",
+        hue: 280,
+      },
+      {
+        id: "uaibimotors",
+        title: "UaiBiMotors · Java System",
+        summary: "Motorcycle dealership management system built in Java with OOP. Vehicle, customer, and order registration.",
+        stack: ["Java", "OOP", "IntelliJ"],
+        url: "https://github.com/WesleyOliveirajf/Projeto_UaiBiMotors_JAVA",
+        hue: 38,
+      },
+    ],
+
     ui: {
       tagline: "Open to full-time roles, remote or hybrid. I reply within 24h.",
       yearsLabel: "yrs in IT",
@@ -486,6 +546,9 @@ window.PORTFOLIO = {
       sectionDiffMeta: "// differentials",
       sectionStack: "stack.json",
       sectionStackMeta: (n) => `// ${n} items`,
+      sectionGithub: "github[]",
+      sectionGithubMeta: "// open source projects",
+      viewOnGithub: "view on github →",
       sectionContact: "contact()",
       sectionContactMeta: "// say hi",
       navAbout: "about",
@@ -494,6 +557,7 @@ window.PORTFOLIO = {
       navWhyMe: "why_me",
       navStack: "stack",
       navContact: "contact",
+      navGithub: "github",
       openToWork: "● open_to_work",
       bioContact: "direct contact",
       education: "// education",

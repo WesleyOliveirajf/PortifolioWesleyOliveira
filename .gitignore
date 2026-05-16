@@ -1,3 +1,4 @@
 node_modules/
 .design-canvas.state.json
 .DS_Store
+.vercel

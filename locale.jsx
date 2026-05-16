@@ -5,6 +5,10 @@ const PortfolioLocaleCtx = React.createContext(null);
 function PortfolioLocaleProvider({ children }) {
   const [lang, setLangState] = React.useState(() => {
     try {
+      const q = new URLSearchParams(window.location.search).get("lang");
+      if (q === "en" || q === "pt") return q;
+    } catch (e) {}
+    try {
       const s = localStorage.getItem("portfolio-lang");
       if (s === "en" || s === "pt") return s;
     } catch (e) {}
@@ -18,6 +22,11 @@ function PortfolioLocaleProvider({ children }) {
       localStorage.setItem("portfolio-lang", v);
     } catch (e) {}
     document.documentElement.lang = v === "en" ? "en" : "pt-BR";
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", v);
+      window.history.replaceState({}, "", url);
+    } catch (e) {}
   }, []);
 
   React.useEffect(() => {

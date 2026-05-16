@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="0; url=Portfolio%20Wesley.html" />
   <title>Portfólio · Wesley Oliveira</title>
 </head>
 <body>
   <p>
-    Redirecionando… Se não abrir,
-    <a href="Portfolio%20Wesley.html">clique aqui para abrir o portfólio</a>
-    ou
-    <a href="Portfolio%20Wesley%20-%20Mono.html">a versão Mono</a>.
+    Redirecionando para Mono Tabular… Se não abrir,
+    <a href="Portfolio%20Wesley%20-%20Mono.html">clique aqui</a>,
+    <a href="Portfolio%20Wesley.html">comparar as 3 direções</a>.
   </p>
+  <script>
+    (function () {
+      var target = "Portfolio%20Wesley%20-%20Mono.html";
+      var search = window.location.search || "";
+      var hash = window.location.hash || "";
+      window.location.replace(target + search + hash);
+    })();
+  </script>
 </body>
 </html>
