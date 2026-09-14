@@ -25,15 +25,15 @@ window.PORTFOLIO = {
     intro: "Analista de Sistemas e Desenvolvedor Fullstack com mais de 10 anos em TI. Foco em automatizar processos com Python, integrar sistemas legados com tecnologias modernas e aplicar IA Generativa em produção.",
 
     longBio: [
-      "Sou Analista de Sistemas com mais de 10 anos de experiência em TI, hoje atuando como Pleno na TORP Indústria Têxtil — onde evoluo o ERP SISPLAN, garanto a estabilidade da operação financeira e elimino trabalho manual da equipe com automações em Python.",
-      "Tenho experiência sólida com bancos de dados SQL e PostgreSQL, criação de pipelines de dados e implementação de soluções com Inteligência Artificial Generativa via n8n e GPT-4o. Não é só teoria: meus agentes e automações estão em produção e entregam impacto mensurável.",
-      "Tenho um perfil bridge: entendo tanto o lado técnico quanto as necessidades do negócio, facilitando a comunicação entre TI e áreas operacionais. Aprendo continuamente — atualmente faço especialização em IA para Desenvolvimento e estudo semanalmente Python, segurança e cloud.",
+     "Sou Analista de Sistemas com mais de 10 anos de experiência em TI, em transição para Desenvolvimento de Software. Atualmente evoluo o ERP SISPLAN, automatizo processos em Python e apoio operações financeiras críticas na TORP Indústria Têxtil.",
+     "Tenho experiência prática com SQL, PostgreSQL, pipelines de dados, n8n e soluções de IA Generativa com GPT-4o. Uno visão técnica e de negócio para transformar demandas operacionais em soluções eficientes, escaláveis e com impacto real.",
+     "Estou em constante evolução, com especialização em IA para Desenvolvimento e estudos contínuos em Python, segurança e cloud.",
     ],
 
     stack: {
       "Linguagens":       ["Python", "Java", "JavaScript", "SQL", "HTML/CSS"],
       "Banco de Dados":   ["PostgreSQL", "SQL Server", "MySQL", "Stored Procedures", "ETL"],
-      "Automação & IA":   ["n8n", "GPT-4o", "Agentes de IA", "RPA", "Python automation"],
+      "Automação & IA":   ["n8n", "IA Generativas", "Agentes de IA", "RPA", "Python automation"],
       "Dev Tools":        ["Git/GitHub", "VS Code", "PyCharm", "IntelliJ", "Postman", "Supabase", "Vercel"],
       "Cloud & Infra":    ["VPS/Nginx", "Docker", "Linux", "MacOS", "Backup em nuvem"],
       "Dados & BI":       ["Power BI", "Excel avançado", "Power Query", "Pandas", "Análise estatística"],
@@ -59,8 +59,8 @@ window.PORTFOLIO = {
         kind: "IA Generativa · Automação",
         year: "2024 — presente",
         role: "Implementação fullstack",
-        summary: "Integrações com IA Generativa e agentes autônomos via n8n + GPT-4o para respostas automáticas, análise de dados e fluxos internos da TORP. Em produção, não prova de conceito.",
-        stack: ["n8n", "GPT-4o", "Agentes IA", "Python", "Webhooks"],
+        summary: "Integrações com IA Generativa e agentes autônomos, análise de dados e fluxos internos da TORP. Em produção, não prova de conceito.",
+        stack: ["Java", "Agentes IA", "Python", "Webhooks"],
         metric: "agentes em produção",
         hue: 280,
       },
@@ -158,11 +158,10 @@ window.PORTFOLIO = {
     ],
 
     education: [
-      { period: "2026 — 2027 · em andamento ★", title: "Especialização em IA para Desenvolvimento", inst: "UniFatecie" },
+      { period: "2026 — 2027 · em andamento ★", title: "Especialização em IA para Desenvolvimento", inst: "Estacio de Sá" },
       { period: "Jun/2025 — Dez/2025",          title: "Pós: IA Generativa — Inovação e Automação", inst: "UniFatecie" },
       { period: "Nov/2024 — Ago/2025",          title: "MBA em Gestão de Projetos de TI", inst: "UniFatecie" },
-      { period: "Jul/2024 — Dez/2027 · em andamento", title: "Bacharelado em Sistemas de Informação", inst: "UniFatecie" },
-      { period: "Nov/2024 — Dez/2026 · em andamento", title: "CST em Segurança da Informação", inst: "UNINTER" },
+      { period: "Jul/2024 — Dez/2027 · em andamento", title: "Bacharelado Engenharia de Software", inst: "Estacio ao vivo" },
       { period: "Jul/2020 — Dez/2023",          title: "Tecnólogo em Análise e Desenvolvimento de Sistemas", inst: "UniFatecie" },
     ],
 
